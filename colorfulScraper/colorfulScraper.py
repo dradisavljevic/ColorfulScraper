@@ -20,7 +20,8 @@ def main():
 
 	for list_item in li_items:
 		link_item = list_item.find('a')
-		value = link_item['href']
+		value = link_item['href'].upper()
+		value = re.sub('[/]', '#', value)
 		color_name = link_item.text.split('#')[0].split('(')[0]
 		color_name_words = re.split('[^a-zA-Z0-9]', color_name)
 		culled_words = []
