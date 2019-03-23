@@ -1,0 +1,1 @@
+Simple python web scraper using BeautifulSoup package to pull all the named colors from the [Encycolorpedia](https://encycolorpedia.com) which can then be used in other projects for consistency purpose.
