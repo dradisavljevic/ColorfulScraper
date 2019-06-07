@@ -38,9 +38,15 @@ def main():
 		data[camel_case_name] = value
 
 	print('All the colors pulled. Just one moment please...')
+	# sort the data by hexadecimal code
 	sorted_data = sorted(data.items(), key=operator.itemgetter(1))
+	# convert the array back to json object
+	jsonData = {}
+	for i in range(len(sorted_data)):
+		jsonData[sorted_data[i][1]]=sorted_data[i][0]
+
 	with open('colors.json', 'w') as jsonfile:
-		json.dump(sorted_data, jsonfile)
+		json.dump(jsonData, jsonfile)
 
 	print('Done')
 
